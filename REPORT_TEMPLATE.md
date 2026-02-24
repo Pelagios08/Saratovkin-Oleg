@@ -2,117 +2,123 @@
 
 ## 1. Project Overview
 
-**Project Name:**  
-(write your project name)
+**Project Name:**  Doshirak Level System
 
 **What does your calculator do?**  
-(Explain in 2–3 sentences what problem you are solving and what you calculate.)
-
-Example:  
-This calculator calculates Body Mass Index (BMI) using weight and height. It also classifies the result into health categories.
+This calculator translates a user's name, height, and weight into "Doshirak" noodle units to evaluate their physical stats in a fun, post-apocalyptic context. It calculates the body's equivalent in noodle packages and estimates a "Survival Forecast" in days based on caloric energy reserves. The system then uses if/else logic to categorize the user into survival ranks
 
 ---
 
 ## 2. Inputs
-
-List and explain all inputs you used.
+User Name, Height (cm), Weight (kg).
 
 | Input Name | Unit | What it Represents |
 |---|---|---|
-| Example: Weight | kg | User body weight |
-| Example: Height | cm | User height |
+|  Weight | kg | User body weight |
+| Height | cm | User height |
 
-Explain in words:  
-(Why did you choose these inputs? Why are they important?)
+I chose name, height, and weight as inputs because they are the most basic human data. Height and weight serve as the raw data needed for the calculation. These inputs are important because they allow the script to transform abstract human metrics into tangible real-world objects (like noodle packages).
 
 ---
 
 ## 3. Process (Calculation Logic)
 
 **Formula or Calculation Used:**  
-(Write your formula or explain how calculation works.)
 
-Example:  
-BMI = weight / (height in meters)^2
+1. Height Formula (linear measurement):
+We take the user's height in centimeters and divide it by 12 (the average length of one noodle block in centimeters). The result tells us how many noodles would need to be laid out in a row to reach the top of the user's head.
 
-**Steps:**
-1. Get input values from HTML  
-2. Convert values if needed (example: cm → meters)  
-3. Perform calculation  
-4. Store result in variable  
+2. Weight Formula (mass measurement):
+We take the user's body weight in kilograms and divide it by 0.09 (the standard weight of one noodle block is 90 grams, converted to kilograms). This tells us how many noodle blocks would balance the user on the scale.
+
+*steps
+Get input values ​​from HTML:
+Using the document.getElementById().value method, the program retrieves the username (userName), as well as numeric data about height (heightInput) and weight (weightInput) from the input fields on the page.
+
+Convert values ​​if needed:
+The entered values ​​are converted from text to numeric format using parseFloat(). Logical filtering also occurs here: if the user entered height in centimeters, the program is ready to use them to divide by the length of the brick (12 cm). 
+
+Store results in variables:
+Calculation results are saved in new variables (heightInDosh, weightInDosh, survivalDays). This allows this data to be used later for displaying text on the screen and for the if/else conditions that determine the user's final rank (verdict).
 
 ---
 
 ## 4. Conditional Logic (if / else)
 
-Explain how your program interprets the result.
 
-Example:
 
-If BMI < 18.5 → Underweight  
-If BMI 18.5 – 24.9 → Normal  
-If BMI ≥ 25 → Overweight  
+The program interprets the result based on the FinalWeight variable, which is your weight converted into the number of packs of Doshirak.
 
-Explain why you chose these ranges (if using real model, mention it).
+If finalWeight > 1000 → Rank SS (Abnormally high rate)
+If finalWeight 701 - 1000 → Rank A (Master system)
+If finalWeight ≤ 700 → Rank B (Newbie)
+Why I chose these ranges:
+I chose these thresholds (700 and 1000) based on the average human weight and game balance:
+
+Realistic baseline: An average adult weighing 70-80 kg is approximately 770-880 packs of noodles. I set the limits so that most normal people would fall into Rank A. This makes the results "fair" for the average user.
+
+Elite (1000+) effect: The threshold of 1000 packs (corresponding to a weight of 90 kg and above) is chosen as the "legendary" level. This creates a sense of rarity for the highest SS rank, similar to anime or RPG games.
+
+Game progression: The lower threshold of up to 700 packs is reserved for Rank B.
 
 ---
 
 ## 5. Output
 
-What does your program show to the user?
+What the program displays
+Calculated values: The program displays two specific results that correspond to real-world data:
 
-- Calculated value  
-- Category or interpretation  
-- Personalized message (if used)  
-- Optional: binary output (if implemented)
+Height in units: The user's height in centimeters, divided by the length of one noodle block (12 cm).
+
+Weight in units: The user's weight in kilograms, divided by the mass of one package (0.09 kg).
+
+Category or interpretation: The program assigns a rank (SS, A, or B).
+
+Conclusions
+
+State 0 (Hidden): The results container remains invisible (display: none) by default or in case of an error.
+
+State 1 (Visible): The results container appears (display: block) only after a successful calculation, signaling the user that the process is complete.
 
 ---
 
 ## 6. Edge Cases / Unusual Inputs
 
-What happens if:
+Error detection: The program checks the entered data. If it detects a zero, a negative number, or an empty field, it considers the data "invalid."
 
-- User enters zero?  
-- User enters negative number?  
-- User leaves input empty?  
+A pop-up window appears on the screen, warning the user to enter valid numbers to perform the calculation correctly.
 
-Explain how your program handles this.
+The program immediately terminates the process. No calculations are performed, and the results window remains hidden.
+
+This protects against unrealistic results.
 
 ---
 
 ## 7. Optional Features (If You Added Any)
 
-Examples:
-- Binary conversion  
-- Extra calculations  
-- Extra UI features  
-- Validation messages  
+1. The program manages the user interface state.
+It specifically checks for "false" values ​​(empty input fields) and logical impossibilities (zero or negative numbers).
 
----
+Visual Precision: By rounding "Noodle Height" to one decimal place and "Noodle Weight" to a whole number, I made the data much more readable and user-friendly.
 
-## 8. How to Run the Project
-
-1. Download or clone repository  
-2. Open `index.html` in browser  
-3. Enter input values  
-4. Click calculate button  
+3.
+I added a Status System: By converting mass into a "rank" (SS, A, or B). It's like a minigame.
 
 ---
 
 ## 9. AI Usage (If Used)
 
 Did you use AI tools?  
-(Yes / No)
+Yes 
 
 If yes, explain briefly:
-- What you asked AI for  
-- What you modified yourself  
-- What you fully understand now  
+ I asked AI to create a calculator skeleton. I didn't know how to write a formula in code, and I also hadn't studied JavaScript before my studies. But the HTML and some of the CSS were done by myself because I studied them in school.
+I now fully understand how components work, but I can't write the code itself from scratch because I don't know the syntax. 
 
 ---
 
 ## 10. Reflection
 
-What did you learn from this assignment?
+I learned how to make a working website, what a Java script is, understood the logic behind creating a calculator, and learned that you can use a font without downloading it to your device. I also learned a lot about CSS.
 
 (2–4 sentences)
