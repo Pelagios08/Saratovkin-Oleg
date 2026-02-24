@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Personal Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doshirak Level System</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Oswald:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<h1>Personal Calculator</h1>
+    <div class="bg-text">DOSHIRAK POWER</div>
 
-<form id="calculatorForm">
-    <!-- Add input fields here -->
-</form>
+    <div class="calculator-card">
+        <h1>Noodle Rank</h1>
+        
+        <div class="input-group">
+            <label>Your height (cm)</label>
+            <input type="number" id="heightInput" placeholder="For example: 175">
+        </div>
 
-<div id="output">
-    <!-- Results will be displayed here -->
-</div>
+        <div class="input-group">
+            <label>Your weight (kg)</label>
+            <input type="number" id="weightInput" placeholder="For example: 70">
+        </div>
 
-<script src="script.js"></script>
+        <button id="calcBtn">System Analysis</button>
+
+        <div id="resultBox" class="result-box">
+            <div class="res-line">Growth in briquettes: <b id="resHeight">0</b> pcs.</div>
+            <div class="res-line">Weight in packs: <b id="resWeight">0</b> pcs.</div>
+            <div id="rankLabel" class="rank-badge">Rank: Not defined</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
