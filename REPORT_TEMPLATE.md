@@ -113,12 +113,14 @@ Yes
 
 If yes, explain briefly:
  I asked AI to create a calculator skeleton. I didn't know how to write a formula in code, and I also hadn't studied JavaScript before my studies. But the HTML and some of the CSS were done by myself because I studied them in school.
-I now fully understand how components work, but I can't write the code itself from scratch because I don't know the syntax. 
+I now fully understand how components work, but I can't write the code itself from scratch because I don't know the syntax.
+I used AI to search for the font.
 
 ---
 
 ## 10. Reflection
 
-I learned how to make a working website, what a Java script is, understood the logic behind creating a calculator, and learned that you can use a font without downloading it to your device. I also learned a lot about CSS.
+I learned how to make a working website, what a JavaScript is, understood the logic behind creating a calculator, and learned that you can use a font without downloading it to your device. I also learned a lot about CSS.
+I like the site's logic, but I don't like writing it.
 
 (2–4 sentences)
